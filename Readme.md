@@ -172,15 +172,15 @@ This document explains the environment variables needed for the TrustNet backend
 
 ## Purpose of Each Environment Variable
 
-| Variable           | Purpose                                                                                  | Client-Side Safe?              |
-|--------------------|------------------------------------------------------------------------------------------|-------------------------------|
-| `DATABASE_URL`      | Connection string for the PostgreSQL database                                           | No (Server-side only)          |
-| `JWT_SECRET`        | Secret key for signing JSON Web Tokens for user authentication                           | No (Server-side only)          |
-| `NEXTAUTH_SECRET`   | Secret used for NextAuth session encryption                                             | No (Server-side only)          |
-| `REDIS_URL`         | Connection URL for Redis server used for caching and session storage                     | No (Server-side only)          |
-| `NODE_ENV`          | Defines environment mode (e.g., development, production)                                | No (Server-side only)          |
-| `UPI_SERVICE_URL`   | URL for UPI verification service (mock during dev, real endpoint in production)         | No (Server-side only)          |
-| `NEXTAUTH_URL`      | Public URL of the application, used by NextAuth for redirect callbacks                  | Yes (safe to expose if needed) |
+| Variable          | Purpose                                                                         | Client-Side Safe?              |
+| ----------------- | ------------------------------------------------------------------------------- | ------------------------------ |
+| `DATABASE_URL`    | Connection string for the PostgreSQL database                                   | No (Server-side only)          |
+| `JWT_SECRET`      | Secret key for signing JSON Web Tokens for user authentication                  | No (Server-side only)          |
+| `NEXTAUTH_SECRET` | Secret used for NextAuth session encryption                                     | No (Server-side only)          |
+| `REDIS_URL`       | Connection URL for Redis server used for caching and session storage            | No (Server-side only)          |
+| `NODE_ENV`        | Defines environment mode (e.g., development, production)                        | No (Server-side only)          |
+| `UPI_SERVICE_URL` | URL for UPI verification service (mock during dev, real endpoint in production) | No (Server-side only)          |
+| `NEXTAUTH_URL`    | Public URL of the application, used by NextAuth for redirect callbacks          | Yes (safe to expose if needed) |
 
 ---
 
@@ -222,5 +222,91 @@ This approach ensures secure and smooth configuration of environment variables f
 
 ---
 
+## Development Workflow.
 
+---
 
+### Branch Naming Convention
+
+### Format
+
+{type}/{short-description}
+
+### Types
+
+- `feat/` - New features
+- `fix/` - Bug fixes
+- `hotfix/` - Critical production fixes
+- `docs/` - Documentation updates
+- `style/` - Code style changes (formatting, etc.)
+- `refactor/` - Code refactoring
+- `test/` - Adding tests
+- `chore/` - Maintenance tasks
+
+### Examples
+
+- `feat/user-authentication`
+- `fix/login-validation`
+- `docs/api-endpoints`
+- `refactor/auth-system`
+
+### PR TEMPLATE
+
+### Description
+
+<!-- Describe your changes and what problem they solve -->
+
+### Type of Change
+
+- [ ] 🚀 New feature
+- [ ] 🐛 Bug fix
+- [ ] 📚 Documentation
+- [ ] 🎨 Style update
+- [ ] ♻️ Code refactor
+- [ ] ✅ Test addition
+- [ ] 🔧 Chore
+- [ ] ⚠️ Breaking change
+
+### Checklist
+
+- [ ] My code follows the project style guidelines
+- [ ] I have performed a self-review of my code
+- [ ] I have commented my code where necessary
+- [ ] I have updated the documentation if needed
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective
+- [ ] New and existing unit tests pass locally
+
+### Workflow Reflection
+
+This workflow helps because:
+
+**Code Quality:**
+
+- ESLint/Prettier catch issues early
+- Code reviews catch bugs before merging
+- Consistent patterns make code maintainable
+
+**Collaboration:**
+
+- Clear PR templates help reviewers understand changes
+- Everyone follows same branching conventions
+- CI/CD pipeline provides objective quality gates
+
+**Velocity:**
+
+- Automated checks save manual review time
+- Clear processes reduce confusion and rework
+- Quick feedback loops through CI pipeline
+
+### Screenshots (if applicable)
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
